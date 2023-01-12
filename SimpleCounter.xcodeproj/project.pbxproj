@@ -15,6 +15,9 @@
 		DD15DA912966376C009F587C /* MyColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15DA902966376C009F587C /* MyColorPicker.swift */; };
 		DD15DA9329663995009F587C /* MyComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15DA9229663995009F587C /* MyComponentData.swift */; };
 		DD15DA95296639DE009F587C /* ColorToHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15DA94296639DE009F587C /* ColorToHex.swift */; };
+		DD1BF2432970BCC50094A4BE /* Counters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD1FFFBD2966F83A002DF909 /* Counters.xcdatamodeld */; };
+		DD1BF2442970BCCC0094A4BE /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1FFFC02966F8C2002DF909 /* DataController.swift */; };
+		DD1BF2472970BDCB0094A4BE /* ProgressWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BF2452970BD7E0094A4BE /* ProgressWidgetView.swift */; };
 		DD1FFFBF2966F83A002DF909 /* Counters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD1FFFBD2966F83A002DF909 /* Counters.xcdatamodeld */; };
 		DD1FFFC12966F8C2002DF909 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1FFFC02966F8C2002DF909 /* DataController.swift */; };
 		DD236EB529697C52009C00F7 /* CenterCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD236EB429697C52009C00F7 /* CenterCounterView.swift */; };
@@ -67,6 +70,7 @@
 		DD15DA902966376C009F587C /* MyColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColorPicker.swift; sourceTree = "<group>"; };
 		DD15DA9229663995009F587C /* MyComponentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyComponentData.swift; sourceTree = "<group>"; };
 		DD15DA94296639DE009F587C /* ColorToHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorToHex.swift; sourceTree = "<group>"; };
+		DD1BF2452970BD7E0094A4BE /* ProgressWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressWidgetView.swift; sourceTree = "<group>"; };
 		DD1FFFBE2966F83A002DF909 /* Counters.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Counters.xcdatamodel; sourceTree = "<group>"; };
 		DD1FFFC02966F8C2002DF909 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		DD236EB429697C52009C00F7 /* CenterCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCounterView.swift; sourceTree = "<group>"; };
@@ -76,7 +80,7 @@
 		DD63A62C296D9893008C0FE5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		DD63A62E296D9894008C0FE5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		DD63A631296D9894008C0FE5 /* SimpleWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWidgetBundle.swift; sourceTree = "<group>"; };
-		DD63A633296D9894008C0FE5 /* SimpleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWidget.swift; sourceTree = "<group>"; };
+		DD63A633296D9894008C0FE5 /* SimpleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWidget.swift; sourceTree = "<group>"; usesTabs = 1; };
 		DD63A635296D9894008C0FE5 /* SimpleWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SimpleWidget.intentdefinition; sourceTree = "<group>"; };
 		DD63A636296D9897008C0FE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD63A638296D9897008C0FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				DD63A631296D9894008C0FE5 /* SimpleWidgetBundle.swift */,
 				DD63A633296D9894008C0FE5 /* SimpleWidget.swift */,
 				DD63A635296D9894008C0FE5 /* SimpleWidget.intentdefinition */,
+				DD1BF2452970BD7E0094A4BE /* ProgressWidgetView.swift */,
 				DD63A636296D9897008C0FE5 /* Assets.xcassets */,
 				DD63A638296D9897008C0FE5 /* Info.plist */,
 			);
@@ -317,7 +322,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD1BF2442970BCCC0094A4BE /* DataController.swift in Sources */,
+				DD1BF2432970BCC50094A4BE /* Counters.xcdatamodeld in Sources */,
 				DD63A632296D9894008C0FE5 /* SimpleWidgetBundle.swift in Sources */,
+				DD1BF2472970BDCB0094A4BE /* ProgressWidgetView.swift in Sources */,
 				DD63A634296D9894008C0FE5 /* SimpleWidget.swift in Sources */,
 				DD63A639296D9897008C0FE5 /* SimpleWidget.intentdefinition in Sources */,
 			);

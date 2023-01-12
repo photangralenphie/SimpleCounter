@@ -41,10 +41,13 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct SimpleWidgetEntryView : View {
+    
+    @StateObject private var dataController = DataController()
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        ProgressWidgetView()
+            .environment(\.managedObjectContext, dataController.container.viewContext)
     }
 }
 
