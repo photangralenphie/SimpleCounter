@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  SimpleCounter
+
+  Created by Jonas Helmer on 07.01.23.
+  
+*/
+// ContentView
+"Counters" = "Zähler";
+"Sorting Options" = "Sortieroptionen";
+"Aphabetical" = "Alphabetisch";
+"Count" = "Zählerstand";
+"Newest" = "Neuster";
+"Last update" = "Letztes Update";
+
+// CounterListView
+"Something went wrong" = "Etwas ist schief gegangen";
+
+// AddCounterView
+"Counter Typ" = "Zählertyp";
+"With a target counter you can set yourself a goal." = "Mit einen Ziel-Zähler knaast du dir ein Ziel setzen.";
+"Counter" = "Zähler";
+"Target Counter" = "Ziel-Zähler";
+"Name" = "Name";
+"Optional" = "Optional";
+"Start Value: " = "Anfangswert: ";
+"0 (default)" = "0 (standard)";
+"Increment: " = "Schrittweite: ";
+"1 (default)" = "1 (standard)";
+"Target: " = "Ziel: ";
+"New Counter" = "Neuer Zähler";
+"Cancel" = "Abbrechen";
+"Add" = "Hinzufügen";
+"Please provide a name for your counter" = "Bitte gib einen Namen für deinen Zähler an";
+"OK" = "OK";
+
+//CounterViews (folder)
+"Unknown" = "Unbekannt";
+
+// SettingsView
+"Accent Color" = "Akzentfarbe";
+"Counter Style" = "Zähler Stil";
+"Left" = "Links";
+"Center" = "Mittig";
+"Right" = "Rechts";
+"Preview" = "Vorschau";
+"156" = "156";
+"Name" = "Name";
+"Something went wrong" = "Etwas ist schief gegangen";
+"Other" = "Anderes";
+"Layout" = "Layout";
+"Compact Counters" = "Kompakte Zähler";
+"Modern" = "Modern";
+"Compact" = "Kompakt";
+"Haptic Feedback" = "Haptisches Feedback";
+"iCloud Sync" = "iCloud Sync";
+"Settings" = "Einstellungen";
+"Done" = "Fertig";
