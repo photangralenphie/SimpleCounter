@@ -37,8 +37,13 @@ struct CenterCounterView: View {
         
         VStack(alignment: .center) {
             Text(counter.name ?? "Unknown")
-            Text("\(counter.count)")
-                .font(.largeTitle)
+            HStack(alignment: .firstTextBaseline, spacing: 0) {
+                Text("\(counter.count)")
+                    .font(.largeTitle)
+                if (counter.hasTarget) {
+                    Text("/\(counter.target)")
+                }
+            }
         }
         
         Spacer()

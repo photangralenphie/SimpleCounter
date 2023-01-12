@@ -32,11 +32,15 @@ struct LeftCounterView: View {
                 lastUpdateIndex+=1
                 try? moc.save()
             }
-        
-        Text("\(counter.count)")
-            .frame(minWidth: 70)
-            .font(.largeTitle)
-            .padding(.horizontal)
+
+        HStack(alignment: .firstTextBaseline, spacing: 0) {
+            Text("\(counter.count)")
+                .font(.largeTitle)
+            if (counter.hasTarget) {
+                Text("/\(counter.target)")
+            }
+        }
+        .frame(minWidth: 90)
         
         Image(systemName: "plus")
             .imageScale(.large)

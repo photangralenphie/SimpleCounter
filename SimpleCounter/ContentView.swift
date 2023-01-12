@@ -37,13 +37,13 @@ struct ContentView: View {
                             Image(systemName: "plus")
                                 .font(.title)
                                 .frame(width: 50, height: 50)
-                                //.background(.ultraThinMaterial)
-                                .background{
-                                    Color.clear
-                                        .background(.ultraThinMaterial)
-                                        .environment(\.colorScheme, .light)
-                                }
+                                .background(.ultraThinMaterial)
                                 .cornerRadius(25)
+                                .overlay( // rounded border
+                                    RoundedRectangle(cornerRadius: 25)
+                                        .stroke(Color.accentColor, lineWidth: 1)
+                                )
+                                .shadow(radius: 7)
                         }
                         .padding()
                     }

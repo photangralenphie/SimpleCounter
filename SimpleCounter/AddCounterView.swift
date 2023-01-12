@@ -34,54 +34,60 @@ struct AddCounterView: View {
     
     var body: some View {
         NavigationView {
-            Form {
-                // Add a sectin with descriptions for the both counters
-                Section(header: Text("Counter Typ"), footer: Text("With a target counter you can set yourself a goal.")) {
-                    Picker("Counter Typ", selection: $isTargetCounter.animation()) {
-                        Text("Counter")
-                            .tag(false)
-                        Text("Target Counter")
-                            .tag(true)
-                    }
-                    .pickerStyle(.segmented)
-                    
-                    HStack {
-                        Image(systemName: "rectangle.and.pencil.and.ellipsis")
-                            .foregroundColor(.accentColor)
-                        TextField("Name", text: $name)
-                            .keyboardType(.alphabet)
-                            .autocorrectionDisabled()
-                            .focused($focusedField, equals: .name)
-                    }
-                    
-                    if (isTargetCounter) {
+            VStack {
+                Picker("Counter Typ", selection: $isTargetCounter.animation()) {
+                    Text("Counter")
+                        .tag(false)
+                    Text("Target Counter")
+                        .tag(true)
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal)
+                
+                Form{
+                    // Add a sectin with descriptions for the both counters
+                    Section(footer: Text("With a target counter you can set yourself a goal.")) {
+
+                        
                         HStack {
-                            Text("Target: ")
-                            TextField("", text: $target)
+                            Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                                .foregroundColor(.accentColor)
+                            TextField("Name", text: $name)
+                                .keyboardType(.alphabet)
+                                .autocorrectionDisabled()
+                                .focused($focusedField, equals: .name)
+                        }
+                        
+                        if (isTargetCounter) {
+                            HStack {
+                                Text("Target: ")
+                                TextField("", text: $target)
+                                    .keyboardType(.numberPad)
+                            }
+                        }
+                    }
+
+                    Section(header: Text("Optional")) {
+                        HStack {
+                            Image(systemName: "number")
+                                .foregroundColor(.accentColor)
+                            
+                            Text("Start Value: ")
+                            TextField("0 (default)", text: $startValue)
+                                .keyboardType(.numberPad)
+                        }
+                        
+                        HStack {
+                            Image(systemName: "arrow.up")
+                                .foregroundColor(.accentColor)
+                            Text("Increment: ")
+                            TextField("1 (default)", text: $increment)
                                 .keyboardType(.numberPad)
                         }
                     }
                 }
-
-                Section(header: Text("Optional")) {
-                    HStack {
-                        Image(systemName: "number")
-                            .foregroundColor(.accentColor)
-                        
-                        Text("Start Value: ")
-                        TextField("0 (default)", text: $startValue)
-                            .keyboardType(.numberPad)
-                    }
-                    
-                    HStack {
-                        Image(systemName: "arrow.up")
-                            .foregroundColor(.accentColor)
-                        Text("Increment: ")
-                        TextField("1 (default)", text: $increment)
-                            .keyboardType(.numberPad)
-                    }
-                }
             }
+            
             .navigationTitle("New Counter")
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarLeading) {
