@@ -12,18 +12,18 @@ struct AddCounterView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var moc
     
-    @State private var isTargetCounter: Bool = false
+    @AppStorage("sortIDDate") private var sortIDDate: Int = 0
+    @AppStorage("lastUpdateIndex") private var lastUpdateIndex: Int = 0
     
+    @State private var isTargetCounter: Bool = false
     @State private var name: String = ""
     @State private var startValue: String = ""
     @State private var increment: String = ""
     @State private var target: String = ""
-    
-    @AppStorage("sortIDDate") private var sortIDDate: Int = 0
-    @AppStorage("lastUpdateIndex") private var lastUpdateIndex: Int = 0
-    
+
     @State private var noNameAlert: Bool = false
     
+    // TO BE IMPLEMENTED FURTHER
     @FocusState private var focusedField: Field?
     private enum Field: Int, CaseIterable {
         case name
@@ -45,10 +45,7 @@ struct AddCounterView: View {
                 .padding(.horizontal)
                 
                 Form{
-                    // Add a sectin with descriptions for the both counters
-                    Section(footer: Text("With a target counter you can set yourself a goal.")) {
-
-                        
+                    Section(header: Text("Name"), footer: Text("With a target counter you can set yourself a goal.")) {
                         HStack {
                             Image(systemName: "rectangle.and.pencil.and.ellipsis")
                                 .foregroundColor(.accentColor)
@@ -57,7 +54,7 @@ struct AddCounterView: View {
                                 .autocorrectionDisabled()
                                 .focused($focusedField, equals: .name)
                         }
-                        
+
                         if (isTargetCounter) {
                             HStack {
                                 Text("Target: ")
@@ -87,7 +84,6 @@ struct AddCounterView: View {
                     }
                 }
             }
-            
             .navigationTitle("New Counter")
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarLeading) {
@@ -130,9 +126,7 @@ struct AddCounterView: View {
                         }
                     }
                     .buttonStyle(.borderedProminent)
-                    //.controlSize(.large)
                 }
-
             }
             .alert("Please provide a name for your counter", isPresented: $noNameAlert) {
                 Button("OK", role: .cancel) {
@@ -145,5 +139,3 @@ struct AddCounterView: View {
         }
     }
 }
-
-

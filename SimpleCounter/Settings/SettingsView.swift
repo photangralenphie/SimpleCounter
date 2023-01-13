@@ -25,7 +25,6 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("Counter Style")) {
-                    
                     Picker("Counter Style", selection: $counterStyle) {
                         Text("Left")
                             .tag(0)
@@ -38,7 +37,6 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("Preview")) {
-                    
                     switch counterStyle {
                     case 0:
                         // Counter Version 0 (left)
@@ -123,7 +121,6 @@ struct SettingsView: View {
                         .pickerStyle(.segmented)
                     }
 
-                    
                     Toggle(isOn: $useHapticFeedback, label: {
                         Label("Haptic Feedback", systemImage: "iphone.gen1.radiowaves.left.and.right")
                     })
@@ -134,9 +131,6 @@ struct SettingsView: View {
                     })
                     .toggleStyle(SwitchToggleStyle())
                 }
-                    
-
-                
             }
             .navigationTitle("Settings")
             .toolbar{

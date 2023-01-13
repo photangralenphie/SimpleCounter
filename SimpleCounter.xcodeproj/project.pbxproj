@@ -140,6 +140,7 @@
 				DD1FFFBD2966F83A002DF909 /* Counters.xcdatamodeld */,
 				DD1FFFC02966F8C2002DF909 /* DataController.swift */,
 				DD236EBA29698E17009C00F7 /* Settings */,
+				DDBFAC542971FC2800282B68 /* Extension */,
 				DDB785AB2969EBBD00FBE1B0 /* Localizable.strings */,
 				DD15DA8229662A4F009F587C /* Assets.xcassets */,
 				DD15DA8429662A4F009F587C /* Preview Content */,
@@ -169,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				DD15DA8C29663662009F587C /* SettingsView.swift */,
-				DD15DA94296639DE009F587C /* ColorToHex.swift */,
 				DD15DA902966376C009F587C /* MyColorPicker.swift */,
 				DD15DA9229663995009F587C /* MyComponentData.swift */,
 			);
@@ -196,6 +196,14 @@
 				DD63A638296D9897008C0FE5 /* Info.plist */,
 			);
 			path = SimpleWidget;
+			sourceTree = "<group>";
+		};
+		DDBFAC542971FC2800282B68 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DD15DA94296639DE009F587C /* ColorToHex.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

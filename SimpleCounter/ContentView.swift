@@ -24,7 +24,6 @@ struct ContentView: View {
         NavigationStack {
             ZStack {
                 CounterListView(sortDescripter: sortDescriptor)
-                    .environment(\.managedObjectContext, moc)
                 
                 HStack {
                     Spacer()

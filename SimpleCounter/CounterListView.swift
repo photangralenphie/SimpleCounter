@@ -30,21 +30,16 @@ struct CounterListView: View {
                         switch counterStyle {
                         case 0:
                             LeftCounterView()
-                                .environment(\.managedObjectContext, moc)
-                                .environmentObject(counter)
                         case 1:
                             CenterCounterView()
-                                .environment(\.managedObjectContext, moc)
-                                .environmentObject(counter)
                         case 2:
                             RightCounterView()
-                                .environment(\.managedObjectContext, moc)
-                                .environmentObject(counter)
                         default:
                              Text("Something went wrong")
                         }
                     }
                 }
+                .environmentObject(counter)
             }
             .onDelete { offsets in
                 for index in offsets {
@@ -58,6 +53,7 @@ struct CounterListView: View {
     }
 }
 
+// ListStyle Extension
 struct MyListViewModifier : ViewModifier {
     let compactView : Bool
     func body(content: Content) -> some View {

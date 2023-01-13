@@ -11,7 +11,6 @@ import SwiftUI
 struct SimpleCounterApp: App {
     
     @StateObject private var dataController = DataController()
-    //@State var sortDescriptor: NSSortDescriptor = NSSortDescriptor(key: "sortIDDate", ascending: true)
     @AppStorage("sortOption") private var sortOption: Int = 0
     
     let componentsData = MyComponentData()
@@ -43,6 +42,5 @@ struct SimpleCounterApp: App {
                     .tint(Color(hex: componentsData.availibleColors[accentColor]))
             }
         }
-        
     }
 }
