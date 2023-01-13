@@ -10,13 +10,17 @@ import CoreData
 
 struct CounterListView: View {
     
+    @Binding public var showCongratulationsMessage: Bool
+    
     @FetchRequest var counters: FetchedResults<Counter>
     @Environment(\.managedObjectContext) var moc
     
-    init(sortDescripter: NSSortDescriptor) {
-            let request: NSFetchRequest<Counter> = Counter.fetchRequest()
-            request.sortDescriptors = [sortDescripter]
-            _counters = FetchRequest<Counter>(fetchRequest: request)
+    init(sortDescripter: NSSortDescriptor, showCongratulationsMessage: Binding<Bool>) {
+        _showCongratulationsMessage = showCongratulationsMessage
+    
+        let request: NSFetchRequest<Counter> = Counter.fetchRequest()
+        request.sortDescriptors = [sortDescripter]
+        _counters = FetchRequest<Counter>(fetchRequest: request)
     }
     
     @AppStorage("counterStyle") private var counterStyle: Int = 1
@@ -29,11 +33,11 @@ struct CounterListView: View {
                     HStack(alignment: .center) {
                         switch counterStyle {
                         case 0:
-                            LeftCounterView()
+                            LeftCounterView(showCongratulationsMessage: $showCongratulationsMessage)
                         case 1:
-                            CenterCounterView()
+                            CenterCounterView(showCongratulationsMessage: $showCongratulationsMessage)
                         case 2:
-                            RightCounterView()
+                            RightCounterView(showCongratulationsMessage: $showCongratulationsMessage)
                         default:
                              Text("Something went wrong")
                         }

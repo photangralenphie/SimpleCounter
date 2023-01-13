@@ -34,6 +34,7 @@
 		DDB785A42969C92800FBE1B0 /* CounterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB785A32969C92800FBE1B0 /* CounterListView.swift */; };
 		DDB785A62969D7AF00FBE1B0 /* AddCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB785A52969D7AF00FBE1B0 /* AddCounterView.swift */; };
 		DDB785A92969EBBD00FBE1B0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB785AB2969EBBD00FBE1B0 /* Localizable.strings */; };
+		DDBFAC5729721F7A00282B68 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFAC5629721F7A00282B68 /* CongratulationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		DDB785A52969D7AF00FBE1B0 /* AddCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCounterView.swift; sourceTree = "<group>"; };
 		DDB785AA2969EBBD00FBE1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DDB785AC2969EBD800FBE1B0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DDBFAC5629721F7A00282B68 /* CongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +136,7 @@
 			children = (
 				DD15DA7E29662A48009F587C /* SimpleCounterApp.swift */,
 				DD15DA8029662A48009F587C /* ContentView.swift */,
-				DDB785A32969C92800FBE1B0 /* CounterListView.swift */,
+				DDBFAC5529721F1B00282B68 /* ContentViewComponents */,
 				DDB785A52969D7AF00FBE1B0 /* AddCounterView.swift */,
 				DD236EB329697C1C009C00F7 /* CounterViews */,
 				DD1FFFBD2966F83A002DF909 /* Counters.xcdatamodeld */,
@@ -159,8 +161,8 @@
 		DD236EB329697C1C009C00F7 /* CounterViews */ = {
 			isa = PBXGroup;
 			children = (
-				DD236EB429697C52009C00F7 /* CenterCounterView.swift */,
 				DD236EB629698228009C00F7 /* LeftCounterView.swift */,
+				DD236EB429697C52009C00F7 /* CenterCounterView.swift */,
 				DD236EB82969829C009C00F7 /* RightCounterView.swift */,
 			);
 			path = CounterViews;
@@ -204,6 +206,15 @@
 				DD15DA94296639DE009F587C /* ColorToHex.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		DDBFAC5529721F1B00282B68 /* ContentViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				DDB785A32969C92800FBE1B0 /* CounterListView.swift */,
+				DDBFAC5629721F7A00282B68 /* CongratulationsView.swift */,
+			);
+			path = ContentViewComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +330,7 @@
 				DD15DA8129662A48009F587C /* ContentView.swift in Sources */,
 				DDB785A42969C92800FBE1B0 /* CounterListView.swift in Sources */,
 				DD1FFFC12966F8C2002DF909 /* DataController.swift in Sources */,
+				DDBFAC5729721F7A00282B68 /* CongratulationsView.swift in Sources */,
 				DD15DA95296639DE009F587C /* ColorToHex.swift in Sources */,
 				DD236EB529697C52009C00F7 /* CenterCounterView.swift in Sources */,
 				DDB785A62969D7AF00FBE1B0 /* AddCounterView.swift in Sources */,
@@ -471,6 +483,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

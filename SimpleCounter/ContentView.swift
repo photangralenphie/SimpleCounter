@@ -19,11 +19,13 @@ struct ContentView: View {
     @State private var sheetHeight: CGFloat = .zero
     
     @AppStorage("sortIDDate") private var sortIDDate: Int = 0
+    
+    @State private var showCongratulationsMessage: Bool = false
         
     var body: some View {
         NavigationStack {
             ZStack {
-                CounterListView(sortDescripter: sortDescriptor)
+                CounterListView(sortDescripter: sortDescriptor, showCongratulationsMessage: $showCongratulationsMessage)
                 
                 HStack {
                     Spacer()
@@ -47,6 +49,8 @@ struct ContentView: View {
                         .padding()
                     }
                 }
+                
+                CongratulationsView(showCongratulationsMessage: $showCongratulationsMessage)
             }
             .navigationTitle("Counters")
             .sheet(isPresented: $showSettings) {

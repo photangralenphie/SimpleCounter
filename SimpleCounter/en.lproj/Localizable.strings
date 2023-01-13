@@ -16,6 +16,10 @@
 // CounterListView
 "Something went wrong" = "Something went wrong";
 
+//CongratulationsView
+"Congratulations!" = "Congratulations!";
+"You reached your target." = "You reached your target.";
+
 // AddCounterView
 "Counter Typ" = "Counter Typ";
 "With a target counter you can set yourself a goal." = "With a target counter you can set yourself a goal.";

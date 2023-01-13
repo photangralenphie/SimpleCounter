@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RightCounterView: View {
     
+    @Binding public var showCongratulationsMessage: Bool
+    
     @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var counter: Counter
     
@@ -50,6 +52,11 @@ struct RightCounterView: View {
                 counter.sortIDUpdate = Int64(lastUpdateIndex)
                 lastUpdateIndex+=1
                 try? moc.save()
+                if (counter.target == counter.count) {
+                    withAnimation {
+                        showCongratulationsMessage = true
+                    }
+                }
             }
     }
 }
