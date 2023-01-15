@@ -35,6 +35,9 @@
 		DDB785A62969D7AF00FBE1B0 /* AddCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB785A52969D7AF00FBE1B0 /* AddCounterView.swift */; };
 		DDB785A92969EBBD00FBE1B0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB785AB2969EBBD00FBE1B0 /* Localizable.strings */; };
 		DDBFAC5729721F7A00282B68 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFAC5629721F7A00282B68 /* CongratulationsView.swift */; };
+		DDEB075B29744666002CCFAD /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = DDEB075A29744666002CCFAD /* SwiftySound */; };
+		DDEB075D297449F0002CCFAD /* congratulations.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DDEB075C297449F0002CCFAD /* congratulations.mp3 */; };
+		DDEB075F297452BE002CCFAD /* button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DDEB075E297452BE002CCFAD /* button.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,8 @@
 		DDB785AA2969EBBD00FBE1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DDB785AC2969EBD800FBE1B0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DDBFAC5629721F7A00282B68 /* CongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
+		DDEB075C297449F0002CCFAD /* congratulations.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = congratulations.mp3; sourceTree = "<group>"; };
+		DDEB075E297452BE002CCFAD /* button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDEB075B29744666002CCFAD /* SwiftySound in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD061B9529722C6D0062EBB2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DDEB075E297452BE002CCFAD /* button.mp3 */,
+				DDEB075C297449F0002CCFAD /* congratulations.mp3 */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		DD15DA7229662A48009F587C = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +160,7 @@
 				DDBFAC542971FC2800282B68 /* Extension */,
 				DDB785AB2969EBBD00FBE1B0 /* Localizable.strings */,
 				DD15DA8229662A4F009F587C /* Assets.xcassets */,
+				DD061B9529722C6D0062EBB2 /* Assets */,
 				DD15DA8429662A4F009F587C /* Preview Content */,
 			);
 			path = SimpleCounter;
@@ -235,6 +251,9 @@
 				DD63A63C296D9897008C0FE5 /* PBXTargetDependency */,
 			);
 			name = SimpleCounter;
+			packageProductDependencies = (
+				DDEB075A29744666002CCFAD /* SwiftySound */,
+			);
 			productName = SimpleCounter;
 			productReference = DD15DA7B29662A48009F587C /* SimpleCounter.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +303,9 @@
 				de,
 			);
 			mainGroup = DD15DA7229662A48009F587C;
+			packageReferences = (
+				DDEB075929744666002CCFAD /* XCRemoteSwiftPackageReference "SwiftySound" */,
+			);
 			productRefGroup = DD15DA7C29662A48009F587C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -300,7 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD15DA8629662A4F009F587C /* Preview Assets.xcassets in Resources */,
+				DDEB075F297452BE002CCFAD /* button.mp3 in Resources */,
 				DDB785A92969EBBD00FBE1B0 /* Localizable.strings in Resources */,
+				DDEB075D297449F0002CCFAD /* congratulations.mp3 in Resources */,
 				DD15DA8329662A4F009F587C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +664,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DDEB075929744666002CCFAD /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamcichy/SwiftySound";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DDEB075A29744666002CCFAD /* SwiftySound */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDEB075929744666002CCFAD /* XCRemoteSwiftPackageReference "SwiftySound" */;
+			productName = SwiftySound;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		DD1FFFBD2966F83A002DF909 /* Counters.xcdatamodeld */ = {

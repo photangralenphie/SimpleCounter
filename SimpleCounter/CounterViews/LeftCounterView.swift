@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftySound
 
 struct LeftCounterView: View {
     
@@ -14,6 +15,7 @@ struct LeftCounterView: View {
     @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var counter: Counter
     
+    @AppStorage("useSoundFeedback") private var useSoundFeedback: Bool = true
     @AppStorage("useHapticFeedback") private var useHapticFeedback: Bool = true
     let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     @AppStorage("lastUpdateIndex") private var lastUpdateIndex: Int = 0
@@ -28,7 +30,12 @@ struct LeftCounterView: View {
             .imageScale(.large)
             .foregroundColor(.accentColor)
             .onTapGesture {
-                hapticFeedback.impactOccurred()
+                if useHapticFeedback {
+                    hapticFeedback.impactOccurred()
+                }
+                if useSoundFeedback {
+                    Sound.play(file: "button.mp3")
+                }
                 counter.count-=counter.increaseCountBy
                 counter.sortIDUpdate = Int64(lastUpdateIndex)
                 lastUpdateIndex+=1
@@ -48,7 +55,12 @@ struct LeftCounterView: View {
             .imageScale(.large)
             .foregroundColor(.accentColor)
             .onTapGesture {
-                hapticFeedback.impactOccurred()
+                if useHapticFeedback {
+                    hapticFeedback.impactOccurred()
+                }
+                if useSoundFeedback {
+                    Sound.play(file: "button.mp3")
+                }
                 counter.count+=counter.increaseCountBy
                 counter.sortIDUpdate = Int64(lastUpdateIndex)
                 lastUpdateIndex+=1

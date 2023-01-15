@@ -13,9 +13,11 @@ struct SettingsView: View {
     
     @AppStorage("accentColor") private var accentColor: Int = 0
     @AppStorage("counterStyle") private var counterStyle: Int = 1
-    @AppStorage("useiCloudSync") private var useiCloudSync: Bool = false
     @AppStorage("compactView") private var compactView: Bool = false
+    @AppStorage("useSoundFeedback") private var useSoundFeedback: Bool = true
     @AppStorage("useHapticFeedback") private var useHapticFeedback: Bool = true
+    
+    @AppStorage("useiCloudSync") private var useiCloudSync: Bool = false
     
     var body: some View {
         NavigationView {
@@ -121,6 +123,11 @@ struct SettingsView: View {
                         .pickerStyle(.segmented)
                     }
 
+                    Toggle(isOn: $useSoundFeedback, label: {
+                        Label("Sounds", systemImage: useSoundFeedback ? "speaker.wave.2.fill" : "speaker.slash.fill")
+                    })
+                    .toggleStyle(SwitchToggleStyle())
+                    
                     Toggle(isOn: $useHapticFeedback, label: {
                         Label("Haptic Feedback", systemImage: "iphone.gen1.radiowaves.left.and.right")
                     })
