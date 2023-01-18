@@ -101,6 +101,7 @@ struct ContentView: View {
                     }
                 }
             }
+        
             CongratulationsView(showCongratulationsMessage: $showCongratulationsMessage)
         }
     }

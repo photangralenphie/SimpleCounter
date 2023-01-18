@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD03EB202978737500DBF22F /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DD03EB1F2978737500DBF22F /* ConfettiSwiftUI */; };
+		DD03EB2229787E1300DBF22F /* MITLicenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03EB2129787E1300DBF22F /* MITLicenceView.swift */; };
 		DD15DA7F29662A48009F587C /* SimpleCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15DA7E29662A48009F587C /* SimpleCounterApp.swift */; };
 		DD15DA8129662A48009F587C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15DA8029662A48009F587C /* ContentView.swift */; };
 		DD15DA8329662A4F009F587C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD15DA8229662A4F009F587C /* Assets.xcassets */; };
@@ -65,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD03EB2129787E1300DBF22F /* MITLicenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MITLicenceView.swift; sourceTree = "<group>"; };
 		DD15DA7B29662A48009F587C /* SimpleCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD15DA7E29662A48009F587C /* SimpleCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCounterApp.swift; sourceTree = "<group>"; };
 		DD15DA8029662A48009F587C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD03EB202978737500DBF22F /* ConfettiSwiftUI in Frameworks */,
 				DDEB075B29744666002CCFAD /* SwiftySound in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +194,7 @@
 				DD15DA8C29663662009F587C /* SettingsView.swift */,
 				DD15DA902966376C009F587C /* MyColorPicker.swift */,
 				DD15DA9229663995009F587C /* MyComponentData.swift */,
+				DD03EB2129787E1300DBF22F /* MITLicenceView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			name = SimpleCounter;
 			packageProductDependencies = (
 				DDEB075A29744666002CCFAD /* SwiftySound */,
+				DD03EB1F2978737500DBF22F /* ConfettiSwiftUI */,
 			);
 			productName = SimpleCounter;
 			productReference = DD15DA7B29662A48009F587C /* SimpleCounter.app */;
@@ -305,6 +311,7 @@
 			mainGroup = DD15DA7229662A48009F587C;
 			packageReferences = (
 				DDEB075929744666002CCFAD /* XCRemoteSwiftPackageReference "SwiftySound" */,
+				DD03EB1E2978737500DBF22F /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = DD15DA7C29662A48009F587C /* Products */;
 			projectDirPath = "";
@@ -351,6 +358,7 @@
 				DD15DA9329663995009F587C /* MyComponentData.swift in Sources */,
 				DD63A63A296D9897008C0FE5 /* SimpleWidget.intentdefinition in Sources */,
 				DD236EB729698228009C00F7 /* LeftCounterView.swift in Sources */,
+				DD03EB2229787E1300DBF22F /* MITLicenceView.swift in Sources */,
 				DD15DA8129662A48009F587C /* ContentView.swift in Sources */,
 				DDB785A42969C92800FBE1B0 /* CounterListView.swift in Sources */,
 				DD1FFFC12966F8C2002DF909 /* DataController.swift in Sources */,
@@ -666,6 +674,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DD03EB1E2978737500DBF22F /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		DDEB075929744666002CCFAD /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/adamcichy/SwiftySound";
@@ -677,6 +693,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DD03EB1F2978737500DBF22F /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD03EB1E2978737500DBF22F /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
 		DDEB075A29744666002CCFAD /* SwiftySound */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DDEB075929744666002CCFAD /* XCRemoteSwiftPackageReference "SwiftySound" */;

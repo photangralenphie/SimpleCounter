@@ -133,10 +133,23 @@ struct SettingsView: View {
                     })
                     .toggleStyle(SwitchToggleStyle())
                     
+                    /*
+                    paid developer account needed for implementation. see here:
+                    https://developer.apple.com/documentation/coredata/mirroring_a_core_data_store_with_cloudkit/setting_up_core_data_with_cloudkit
                     Toggle(isOn: $useiCloudSync, label: {
                         Label("iCloud Sync", systemImage: "icloud")
                     })
                     .toggleStyle(SwitchToggleStyle())
+                     */
+                }
+                
+                Section(header: Text("Credits")) {
+                    NavigationLink("ConfettiSwiftUI") {
+                        MITLicenceView(copyright: "2020 Simon Bachmann", name: "ConfettiSwiftUI")
+                    }
+                    NavigationLink("SwiftySound") {
+                        MITLicenceView(copyright: "2017 Adam Cichy", name: "SwiftySound")
+                    }
                 }
             }
             .navigationTitle("Settings")
