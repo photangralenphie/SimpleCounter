@@ -11,6 +11,7 @@ struct SettingsView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    let componentsData = MyComponentData()
     @AppStorage("accentColor") private var accentColor: Int = 0
     @AppStorage("counterStyle") private var counterStyle: Int = 1
     @AppStorage("compactView") private var compactView: Bool = false
@@ -134,6 +135,7 @@ struct SettingsView: View {
                     .toggleStyle(SwitchToggleStyle())
                     
                     /*
+                    TODO for future
                     paid developer account needed for implementation. see here:
                     https://developer.apple.com/documentation/coredata/mirroring_a_core_data_store_with_cloudkit/setting_up_core_data_with_cloudkit
                     Toggle(isOn: $useiCloudSync, label: {
@@ -161,5 +163,7 @@ struct SettingsView: View {
                 }
             }
         }
+        // This has to be here, otherwise colors won't visually! apply on change.
+        .tint(accentColor==componentsData.availibleColors.count ? .primary : Color(hex: componentsData.availibleColors[accentColor]))
     }
 }

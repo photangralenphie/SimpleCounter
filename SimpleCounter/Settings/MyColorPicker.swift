@@ -23,6 +23,17 @@ struct MyColorPicker: View {
                         newColor = colorIndex
                     }
             }
+            
+            Circle()
+                .strokeBorder(componentsData.availibleColors.count==newColor ? Color.primary : Color.clear, lineWidth: 3)
+                .background{
+                    Image(systemName: "circle.righthalf.fill")
+                        .imageScale(.large)
+                }
+                .padding(.horizontal, -13)
+                .onTapGesture {
+                    newColor = componentsData.availibleColors.count
+                }
         }
         .padding(.vertical)
     }

@@ -11,6 +11,7 @@ struct AddCounterView: View {
     
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var moc
+    @Environment(\.colorScheme) private var colorScheme
     
     @AppStorage("sortIDDate") private var sortIDDate: Int = 0
     @AppStorage("lastUpdateIndex") private var lastUpdateIndex: Int = 0
@@ -124,6 +125,7 @@ struct AddCounterView: View {
                             Image(systemName: "plus")
                             Text("Add")
                         }
+                        .foregroundColor(colorScheme == .dark ? .black : .white)
                     }
                     .buttonStyle(.borderedProminent)
                 }

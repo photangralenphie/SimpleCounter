@@ -32,7 +32,7 @@ struct CongratulationsView: View {
                 .resizable()
                 .frame(width: 200, height: 180)
                 .scaledToFit()
-                .foregroundColor(Color(hex: componentsData.availibleColors[accentColor])) // SwiftUI does not respect tint so this is a workaround
+                .foregroundColor(accentColor==componentsData.availibleColors.count ? .primary : Color(hex: componentsData.availibleColors[accentColor])) // SwiftUI does not respect tint so this is a workaround
                 .padding([.leading, .bottom, .trailing], 50)
         }
         .background(.ultraThinMaterial)
