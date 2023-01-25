@@ -61,6 +61,7 @@ struct LeftCounterView: View {
                 .keyboardType(.numberPad)
             Button("Plus") {
                 counter.count+=Int64(multiAddAmount) ?? 0
+                multiAddAmount = ""
                 showMultiAddAlert = false
                 if (counter.target <= counter.count) {
                     withAnimation {
@@ -70,6 +71,7 @@ struct LeftCounterView: View {
             }
             Button("Minus") {
                 counter.count-=Int64(multiAddAmount) ?? 0
+                multiAddAmount = ""
                 showMultiAddAlert = false
             }
             Button("Cancel", role: .cancel, action: {
