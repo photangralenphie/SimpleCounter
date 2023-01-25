@@ -54,6 +54,17 @@ struct CounterListView: View {
             }
         }
         .myListStyle(compactView: compactView)
+        
+        if (counters.isEmpty) {
+            VStack {
+                Spacer()
+                Spacer()
+                Label("Get started by adding a new counter.", systemImage: "plus")
+                    .foregroundColor(.accentColor)
+                    .frame(width: 250)
+                Spacer()
+            }
+        }
     }
 }
 

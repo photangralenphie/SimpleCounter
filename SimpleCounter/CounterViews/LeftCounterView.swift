@@ -20,6 +20,9 @@ struct LeftCounterView: View {
     let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     @AppStorage("lastUpdateIndex") private var lastUpdateIndex: Int = 0
     
+    @State private var showMultiAddAlert: Bool = false
+    @State private var multiAddAmount: String = ""
+    
     var body: some View {
         
         // Text view at beginning of counterView fixes the seperator not being full lenght
@@ -41,6 +44,9 @@ struct LeftCounterView: View {
                 lastUpdateIndex+=1
                 try? moc.save()
             }
+            .onLongPressGesture {
+                showMultiAddAlert.toggle()
+            }
 
         HStack(alignment: .firstTextBaseline, spacing: 0) {
             Text("\(counter.count)")
@@ -50,6 +56,26 @@ struct LeftCounterView: View {
             }
         }
         .frame(minWidth: 90)
+        .alert("Add or subtract a big amount.", isPresented: $showMultiAddAlert) {
+            TextField("Amount", text: $multiAddAmount)
+                .keyboardType(.numberPad)
+            Button("Plus") {
+                counter.count+=Int64(multiAddAmount) ?? 0
+                showMultiAddAlert = false
+                if (counter.target <= counter.count) {
+                    withAnimation {
+                        showCongratulationsMessage = true
+                    }
+                }
+            }
+            Button("Minus") {
+                counter.count-=Int64(multiAddAmount) ?? 0
+                showMultiAddAlert = false
+            }
+            Button("Cancel", role: .cancel, action: {
+                showMultiAddAlert = false
+            })
+        }
         
         Image(systemName: "plus")
             .imageScale(.large)
@@ -70,6 +96,9 @@ struct LeftCounterView: View {
                         showCongratulationsMessage = true
                     }
                 }
+            }
+            .onLongPressGesture {
+                showMultiAddAlert.toggle()
             }
         
         Spacer()

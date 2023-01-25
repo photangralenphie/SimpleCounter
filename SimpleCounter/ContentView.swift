@@ -16,7 +16,6 @@ struct ContentView: View {
     
     @State private var showSettings: Bool = false
     @State private var addCounter: Bool = false
-    @State private var sheetHeight: CGFloat = .zero
     
     @AppStorage("sortIDDate") private var sortIDDate: Int = 0
     
@@ -41,7 +40,7 @@ struct ContentView: View {
                                     .frame(width: 50, height: 50)
                                     .background(.ultraThinMaterial)
                                     .cornerRadius(25)
-                                    .overlay( // rounded border
+                                    .overlay( // for rounded border
                                         RoundedRectangle(cornerRadius: 25)
                                             .stroke(Color.accentColor, lineWidth: 1)
                                     )

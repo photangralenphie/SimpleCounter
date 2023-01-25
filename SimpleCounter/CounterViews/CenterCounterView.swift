@@ -20,6 +20,9 @@ struct CenterCounterView: View {
     let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     @AppStorage("lastUpdateIndex") private var lastUpdateIndex: Int = 0
     
+    @State private var showMultiAddAlert: Bool = false
+    @State private var multiAddAmount: String = ""
+    
     var body: some View {
         // Text view at beginning and ending of counterView fixes the seperator not being full lenght
         Text("")
@@ -29,6 +32,7 @@ struct CenterCounterView: View {
             .imageScale(.large)
             .foregroundColor(.accentColor)
             .padding()
+            //.gesture(longPress)
             .onTapGesture {
                 if useHapticFeedback {
                     hapticFeedback.impactOccurred()
@@ -40,6 +44,9 @@ struct CenterCounterView: View {
                 counter.sortIDUpdate = Int64(lastUpdateIndex)
                 lastUpdateIndex+=1
                 try? moc.save()
+            }
+            .onLongPressGesture {
+                showMultiAddAlert.toggle()
             }
         
         Spacer()
@@ -54,7 +61,27 @@ struct CenterCounterView: View {
                 }
             }
         }
-        
+        .alert("Add or subtract a big amount.", isPresented: $showMultiAddAlert) {
+            TextField("Amount", text: $multiAddAmount)
+                .keyboardType(.numberPad)
+            Button("Plus") {
+                counter.count+=Int64(multiAddAmount) ?? 0
+                showMultiAddAlert = false
+                if (counter.target <= counter.count) {
+                    withAnimation {
+                        showCongratulationsMessage = true
+                    }
+                }
+            }
+            Button("Minus") {
+                counter.count-=Int64(multiAddAmount) ?? 0
+                showMultiAddAlert = false
+            }
+            Button("Cancel", role: .cancel, action: {
+                showMultiAddAlert = false
+            })
+        }
+ 
         Spacer()
         
         Image(systemName: "plus")
@@ -77,6 +104,9 @@ struct CenterCounterView: View {
                         showCongratulationsMessage = true
                     }
                 }
+            }
+            .onLongPressGesture {
+                showMultiAddAlert.toggle()
             }
         
         Text("")

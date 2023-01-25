@@ -40,6 +40,11 @@
 
 // CounterViews (folder)
 "Unknown" = "Unbekannt";
+"Add or subtract a big amount." = "Einen großen Betrag abzeiehen oder hinzufügen.";
+"Amount" = "Betrag";
+"Plus" = "Plus";
+"Minus" = "Minus";
+"Cancel" = "Abbrechen";
 
 // SettingsView
 "Accent Color" = "Akzentfarbe";
