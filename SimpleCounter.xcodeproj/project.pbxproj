@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD09B75F2AE1A5ED005C9464 /* SystemCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD09B75E2AE1A5ED005C9464 /* SystemCounterView.swift */; };
 		DD1DB9F22AE131C9007BB3BC /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1DB9F12AE131C9007BB3BC /* CongratulationsView.swift */; };
 		DD1DB9F52AE131F6007BB3BC /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DD1DB9F42AE131F6007BB3BC /* ConfettiSwiftUI */; };
 		DD1DB9F72AE13565007BB3BC /* NoCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1DB9F62AE13565007BB3BC /* NoCounterView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD09B75E2AE1A5ED005C9464 /* SystemCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCounterView.swift; sourceTree = "<group>"; };
 		DD1DB9F12AE131C9007BB3BC /* CongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
 		DD1DB9F62AE13565007BB3BC /* NoCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCounterView.swift; sourceTree = "<group>"; };
 		DD1DB9FA2AE141CB007BB3BC /* StateVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateVariables.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				DDAA29862AE00844004E24E3 /* CenterCounterView.swift */,
 				DDAA29872AE00844004E24E3 /* LeftCounterView.swift */,
 				DDAA29882AE00844004E24E3 /* RightCounterView.swift */,
+				DD09B75E2AE1A5ED005C9464 /* SystemCounterView.swift */,
 			);
 			path = CounterStyles;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				DDAA298A2AE00844004E24E3 /* LeftCounterView.swift in Sources */,
 				DDAA299C2AE013D6004E24E3 /* MyColorPicker.swift in Sources */,
 				DDAA29A32AE023A7004E24E3 /* PreviewView.swift in Sources */,
+				DD09B75F2AE1A5ED005C9464 /* SystemCounterView.swift in Sources */,
 				DD1DB9FE2AE14263007BB3BC /* SettingsVariables.swift in Sources */,
 				DDF08EE42ADFF5C1002E77AF /* SimpleCounterApp.swift in Sources */,
 				DDAA29982AE013D6004E24E3 /* MITLicenceView.swift in Sources */,

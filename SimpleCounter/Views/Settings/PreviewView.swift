@@ -10,6 +10,7 @@ import SwiftUI
 struct PreviewView: View {
     
     var counterStyle: CounterStyle
+    @State private var count: Int = 156
     
     var body: some View {
         Section(header: Text("Preview")) {
@@ -19,8 +20,9 @@ struct PreviewView: View {
                     Image(systemName: "minus")
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
+                        .onTapGesture { count -= 1 }
                     
-                    Text("156")
+                    Text("\(count)")
                         .frame(minWidth: 70)
                         .font(.largeTitle)
                         .padding(.horizontal)
@@ -28,6 +30,7 @@ struct PreviewView: View {
                     Image(systemName: "plus")
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
+                        .onTapGesture { count += 1 }
                     
                     Spacer()
                     
@@ -40,12 +43,13 @@ struct PreviewView: View {
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
                         .padding()
+                        .onTapGesture { count -= 1 }
                     
                     Spacer()
                     
                     VStack(alignment: .center) {
                         Text("Name")
-                        Text("156")
+                        Text("\(count)")
                             .font(.largeTitle)
                     }
                     
@@ -55,6 +59,7 @@ struct PreviewView: View {
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
                         .padding()
+                        .onTapGesture { count += 1 }
                 }
                 
             case .right:
@@ -66,8 +71,9 @@ struct PreviewView: View {
                     Image(systemName: "minus")
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
+                        .onTapGesture { count -= 1 }
                     
-                    Text("156")
+                    Text("\(count)")
                         .frame(minWidth: 70)
                         .font(.largeTitle)
                         .padding(.horizontal)
@@ -75,10 +81,21 @@ struct PreviewView: View {
                     Image(systemName: "plus")
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
+                        .onTapGesture { count += 1 }
                 }
                 
             case .system:
-                Text("Coming Soon")
+                Stepper(value: $count) {
+                    HStack {
+                        Text("Name")
+                        Spacer()
+                        HStack(alignment: .firstTextBaseline, spacing: 0) {
+                            Text("\(count)")
+                                .font(.largeTitle)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
             }
         }
     }

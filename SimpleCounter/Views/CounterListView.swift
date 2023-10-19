@@ -46,7 +46,6 @@ struct CounterListView: View {
                                               decreaseCounterWithValue: self.decreaseCounterWithValue,
                                               increaseCouterWithValue: self.increaseCouterWithValue)
                         case .right:
-                            Text("right style")
                             RightCounterView(counter: counter,
                                               showMultiAddAlert: $showMultiAddAlert,
                                               decreaseCounter: self.decreaseCounter,
@@ -54,7 +53,9 @@ struct CounterListView: View {
                                               decreaseCounterWithValue: self.decreaseCounterWithValue,
                                               increaseCouterWithValue: self.increaseCouterWithValue)
                         case .system:
-                            Text("system style")
+                            SystemCounterView(counter: counter,
+                                              decreaseCounter: self.decreaseCounter,
+                                              increaseCounter: self.increaseCounter)
                         }
                     }
                 }
