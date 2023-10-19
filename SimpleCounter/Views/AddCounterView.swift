@@ -12,7 +12,6 @@ struct AddCounterView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) private var modelContext
     
-    @State private var hasGoal: Bool = false
     @State private var counterName: String = ""
     @State private var startValue: String = ""
     @State private var increment: String = ""
@@ -20,61 +19,55 @@ struct AddCounterView: View {
 
     @State private var noNameAlert: Bool = false
     
-    // TO BE IMPLEMENTED FURTHER
     @FocusState private var focusedField: Field?
-    private enum Field: Int, CaseIterable {
+    private enum Field {
         case name
-        case target
-        case value
+        case goal
+        case startValue
         case increment
     }
     
     var body: some View {
         NavigationView {
-            VStack {
-                Form{
-                    Section(header: Text("Name"), footer: Text("With a target counter you can set yourself a goal.")) {
-                        HStack {
-                            Image(systemName: "rectangle.and.pencil.and.ellipsis")
-                                .foregroundColor(.accentColor)
-                            TextField("Name", text: $counterName)
-                                .keyboardType(.alphabet)
-                                .autocorrectionDisabled()
-                                .focused($focusedField, equals: .name)
-                        }
+            Form {
+                Section(header: Text("Name"), footer: Text("With a target counter you can set yourself a goal.")) {
+                    HStack {
+                        Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                            .foregroundColor(.accentColor)
+                        TextField("Name", text: $counterName)
+                            .keyboardType(.alphabet)
+                            .autocorrectionDisabled()
+                            .focused($focusedField, equals: .name)
                     }
+                }
 
-                    Section(header: Text("Optional")) {
-                        Toggle(isOn: $hasGoal.animation()) {
-                            Text("Has goal?")
-                        }
+                Section(header: Text("Optional")) {
+                    HStack {
+                        Image(systemName: "flag.checkered")
+                            .foregroundColor(.accentColor)
+                        Text("Goal: ")
+                        TextField("", text: $valueGoal)
+                            .keyboardType(.numberPad)
+                            .focused($focusedField, equals: .goal)
+                    }
+                    
+                    HStack {
+                        Image(systemName: "number")
+                            .foregroundColor(.accentColor)
                         
-                        if hasGoal {
-                            HStack {
-                                Image(systemName: "flag.checkered")
-                                    .foregroundColor(.accentColor)
-                                Text("Goal: ")
-                                TextField("", text: $valueGoal)
-                                    .keyboardType(.numberPad)
-                            }
-                        }
-
-                        HStack {
-                            Image(systemName: "number")
-                                .foregroundColor(.accentColor)
-                            
-                            Text("Start Value: ")
-                            TextField("0 (default)", text: $startValue)
-                                .keyboardType(.numberPad)
-                        }
-                        
-                        HStack {
-                            Image(systemName: "arrow.up")
-                                .foregroundColor(.accentColor)
-                            Text("Increment: ")
-                            TextField("1 (default)", text: $increment)
-                                .keyboardType(.numberPad)
-                        }
+                        Text("Start Value: ")
+                        TextField("0 (default)", text: $startValue)
+                            .keyboardType(.numberPad)
+                            .focused($focusedField, equals: .startValue)
+                    }
+                    
+                    HStack {
+                        Image(systemName: "arrow.up")
+                            .foregroundColor(.accentColor)
+                        Text("Increment: ")
+                        TextField("1 (default)", text: $increment)
+                            .keyboardType(.numberPad)
+                            .focused($focusedField, equals: .increment)
                     }
                 }
             }
@@ -90,9 +83,20 @@ struct AddCounterView: View {
                             Image(systemName: "plus")
                             Text("Add")
                         }
-                        //.foregroundColor(colorScheme == .dark ? .black : .white)
                     }
                     .buttonStyle(.borderedProminent)
+                }
+                
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button(action: nextFocusField) {
+                        Image(systemName: "chevron.down")
+                    }
+                    .disabled(focusedField == .increment)
+                    Button(action: prevFocusField) {
+                        Image(systemName: "chevron.up")
+                    }
+                    .disabled(focusedField == .name)
                 }
             }
             .alert("Please provide a name for your counter", isPresented: $noNameAlert) {
@@ -101,8 +105,36 @@ struct AddCounterView: View {
                 }
             }
         }
-        .onAppear {
-            focusedField = .name
+        .onAppear { focusedField = .name }
+    }
+    
+    func nextFocusField() {
+        switch focusedField {
+            case .name:
+                focusedField = .goal
+            case .goal:
+                focusedField = .startValue
+            case .startValue:
+                focusedField = .increment
+            case .increment:
+                focusedField = .name
+            case nil:
+                focusedField = .name
+        }
+    }
+    
+    func prevFocusField() {
+        switch focusedField {
+            case .name:
+                focusedField = .increment
+            case .goal:
+                focusedField = .name
+            case .startValue:
+                focusedField = .goal
+            case .increment:
+                focusedField = .startValue
+            case nil:
+                focusedField = .name
         }
     }
     
@@ -111,7 +143,7 @@ struct AddCounterView: View {
             let newCounter = Counter(counterName: counterName,
                                      currentValue: Int64(startValue) ?? 0,
                                      increment: Int64(increment) ?? 1,
-                                     hasGoal: hasGoal,
+                                     hasGoal: valueGoal != "",
                                      valueGoal: Int64(valueGoal) ?? 0)
             modelContext.insert(newCounter)
             try? modelContext.save()
