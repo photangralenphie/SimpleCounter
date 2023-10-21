@@ -27,6 +27,8 @@
 		DDAA29A62AE087B6004E24E3 /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = DDAA29A52AE087B6004E24E3 /* SwiftySound */; };
 		DDAA29AC2AE08BEB004E24E3 /* button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DDAA29AA2AE08BEB004E24E3 /* button.mp3 */; };
 		DDAA29AD2AE08BEB004E24E3 /* congratulations.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DDAA29AB2AE08BEB004E24E3 /* congratulations.mp3 */; };
+		DDEEDC432AE43E0100E9FD6C /* CounterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEEDC422AE43E0100E9FD6C /* CounterButtonView.swift */; };
+		DDEEDC462AE4457D00E9FD6C /* CounterDigitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEEDC452AE4457D00E9FD6C /* CounterDigitsView.swift */; };
 		DDF08EE42ADFF5C1002E77AF /* SimpleCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08EE32ADFF5C1002E77AF /* SimpleCounterApp.swift */; };
 		DDF08EE62ADFF5C1002E77AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08EE52ADFF5C1002E77AF /* ContentView.swift */; };
 		DDF08EE82ADFF5C1002E77AF /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08EE72ADFF5C1002E77AF /* Counter.swift */; };
@@ -66,6 +68,8 @@
 		DDAA29A22AE023A7004E24E3 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		DDAA29AA2AE08BEB004E24E3 /* button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button.mp3; sourceTree = "<group>"; };
 		DDAA29AB2AE08BEB004E24E3 /* congratulations.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = congratulations.mp3; sourceTree = "<group>"; };
+		DDEEDC422AE43E0100E9FD6C /* CounterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButtonView.swift; sourceTree = "<group>"; };
+		DDEEDC452AE4457D00E9FD6C /* CounterDigitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterDigitsView.swift; sourceTree = "<group>"; };
 		DDF08EE02ADFF5C1002E77AF /* SimpleCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF08EE32ADFF5C1002E77AF /* SimpleCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCounterApp.swift; sourceTree = "<group>"; };
 		DDF08EE52ADFF5C1002E77AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,8 +121,9 @@
 		DDAA29852AE00818004E24E3 /* CounterStyles */ = {
 			isa = PBXGroup;
 			children = (
-				DDAA29862AE00844004E24E3 /* CenterCounterView.swift */,
+				DDEEDC442AE4447B00E9FD6C /* CounterComponents */,
 				DDAA29872AE00844004E24E3 /* LeftCounterView.swift */,
+				DDAA29862AE00844004E24E3 /* CenterCounterView.swift */,
 				DDAA29882AE00844004E24E3 /* RightCounterView.swift */,
 				DD09B75E2AE1A5ED005C9464 /* SystemCounterView.swift */,
 			);
@@ -152,6 +157,15 @@
 				DDAA29AB2AE08BEB004E24E3 /* congratulations.mp3 */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		DDEEDC442AE4447B00E9FD6C /* CounterComponents */ = {
+			isa = PBXGroup;
+			children = (
+				DDEEDC422AE43E0100E9FD6C /* CounterButtonView.swift */,
+				DDEEDC452AE4457D00E9FD6C /* CounterDigitsView.swift */,
+			);
+			path = CounterComponents;
 			sourceTree = "<group>";
 		};
 		DDF08ED72ADFF5C1002E77AF = {
@@ -289,9 +303,11 @@
 				DDAA298B2AE00844004E24E3 /* RightCounterView.swift in Sources */,
 				DDAA29A12AE02109004E24E3 /* ListStyleModifier.swift in Sources */,
 				DDF08EE82ADFF5C1002E77AF /* Counter.swift in Sources */,
+				DDEEDC432AE43E0100E9FD6C /* CounterButtonView.swift in Sources */,
 				DDAA298A2AE00844004E24E3 /* LeftCounterView.swift in Sources */,
 				DDAA299C2AE013D6004E24E3 /* ColorPicker.swift in Sources */,
 				DDAA29A32AE023A7004E24E3 /* PreviewView.swift in Sources */,
+				DDEEDC462AE4457D00E9FD6C /* CounterDigitsView.swift in Sources */,
 				DD09B75F2AE1A5ED005C9464 /* SystemCounterView.swift in Sources */,
 				DD1DB9FE2AE14263007BB3BC /* SettingsVariables.swift in Sources */,
 				DDF08EE42ADFF5C1002E77AF /* SimpleCounterApp.swift in Sources */,

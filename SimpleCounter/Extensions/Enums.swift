@@ -13,3 +13,8 @@ enum CounterStyle: Int {
     case right = 2
     case system = 3
 }
+
+enum CounterButtonType {
+    case decrease
+    case increase
+}

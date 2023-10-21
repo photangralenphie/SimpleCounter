@@ -10,16 +10,14 @@ import SwiftData
 import SwiftySound
 
 struct CounterListView: View {
-     
+    
     @Environment(\.modelContext) private var modelContext
     @Query private var counters: [Counter]
     
     @Environment(StateVariables.self) private var stateVariables
     @EnvironmentObject private var settingsVariables: SettingsVariables
     
-    @State private var showMultiAddAlert: Bool = false
-    
-    @State var hapticFeedbackTrigger: Bool = false
+    @State private var hapticFeedbackTrigger: Bool = false
     
     init(sort: SortDescriptor<Counter>) {
         _counters = Query(sort: [sort])
@@ -33,25 +31,16 @@ struct CounterListView: View {
                         switch settingsVariables.counterStyle {
                         case .left:
                             LeftCounterView(counter: counter,
-                                              showMultiAddAlert: $showMultiAddAlert,
                                               decreaseCounter: self.decreaseCounter,
-                                              increaseCounter: self.increaseCounter,
-                                              decreaseCounterWithValue: self.decreaseCounterWithValue,
-                                              increaseCouterWithValue: self.increaseCouterWithValue)
+                                              increaseCounter: self.increaseCounter)
                         case .center:
                             CenterCounterView(counter: counter,
-                                              showMultiAddAlert: $showMultiAddAlert, 
                                               decreaseCounter: self.decreaseCounter,
-                                              increaseCounter: self.increaseCounter,
-                                              decreaseCounterWithValue: self.decreaseCounterWithValue,
-                                              increaseCouterWithValue: self.increaseCouterWithValue)
+                                              increaseCounter: self.increaseCounter)
                         case .right:
                             RightCounterView(counter: counter,
-                                              showMultiAddAlert: $showMultiAddAlert,
                                               decreaseCounter: self.decreaseCounter,
-                                              increaseCounter: self.increaseCounter,
-                                              decreaseCounterWithValue: self.decreaseCounterWithValue,
-                                              increaseCouterWithValue: self.increaseCouterWithValue)
+                                              increaseCounter: self.increaseCounter)
                         case .system:
                             SystemCounterView(counter: counter,
                                               decreaseCounter: self.decreaseCounter,
@@ -74,9 +63,12 @@ struct CounterListView: View {
     
     func increaseCounter(counter: Counter) {
         fireFeedback()
-        counter.stepUp()
+        if counter.stepUp() {
+            withAnimation {
+                stateVariables.showCongratulationsView = true
+            }
+        }
         try? modelContext.save()
-        tryShowCongratulationsMessage(counter: counter)
     }
     
     func decreaseCounter(counter: Counter) {
@@ -85,31 +77,12 @@ struct CounterListView: View {
         try? modelContext.save()
     }
     
-    func increaseCouterWithValue(counter: Counter, multiAddAmount: String) {
-        counter._currentValue += Int64(multiAddAmount) ?? 0
-        showMultiAddAlert = false
-        tryShowCongratulationsMessage(counter: counter)
-    }
-    
-    func decreaseCounterWithValue(counter: Counter, multiAddAmount: String) {
-        counter._currentValue -= Int64(multiAddAmount) ?? 0
-        showMultiAddAlert = false
-    }
-    
     func fireFeedback() {
         if settingsVariables.useHapticFeedback {
             hapticFeedbackTrigger.toggle()
         }
         if settingsVariables.useSoundFeedback {
             Sound.play(file: "button.mp3")
-        }
-    }
-    
-    func tryShowCongratulationsMessage(counter: Counter) {
-        if (counter._valueGoal == counter._currentValue) {
-            withAnimation {
-                stateVariables.showCongratulationsView = true
-            }
         }
     }
 }

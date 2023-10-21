@@ -17,16 +17,10 @@ struct SystemCounterView: View {
     var body: some View {
         Stepper {
             HStack {
-                Text(counter._counterName)
+                Text(counter.counterName)
                 Spacer()
-                HStack(alignment: .firstTextBaseline, spacing: 0) {
-                    Text("\(counter._currentValue)").font(.largeTitle)
-                    if (counter._hasGoal) {
-                        Text("/\(counter._valueGoal)")
-                    }
-                }
+                CounterDigitsView(counter: counter)
             }
-            .padding(.horizontal)
         } onIncrement: {
             increaseCounter(counter)
         } onDecrement: {

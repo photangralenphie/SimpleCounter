@@ -15,7 +15,7 @@ struct ContentView: View {
     @State private var showSettings: Bool = false
     @State private var showAddSheet: Bool = false
     
-    @State private var sortDescriptor = SortDescriptor(\Counter._counterName, order: .forward)
+    @State private var sortDescriptor = SortDescriptor(\Counter.counterName, order: .forward)
     @State private var sortOrder: SortOrder = .forward
     
     @Environment(StateVariables.self) private var stateVariables
@@ -38,13 +38,13 @@ struct ContentView: View {
                         Section {
                             Picker("Sort", selection: $sortDescriptor.animation()) {
                                 Label("Alphabetical", systemImage: "character")
-                                    .tag(SortDescriptor(\Counter._counterName, order: sortOrder))
+                                    .tag(SortDescriptor(\Counter.counterName, order: sortOrder))
                                 Label("Count", systemImage: "number")
-                                    .tag(SortDescriptor(\Counter._currentValue, order: sortOrder))
+                                    .tag(SortDescriptor(\Counter.currentValue, order: sortOrder))
                                 Label("Creation Date", systemImage: "calendar")
-                                    .tag(SortDescriptor(\Counter._creationDate, order: sortOrder))
+                                    .tag(SortDescriptor(\Counter.creationDate, order: sortOrder))
                                 Label("Last Update", systemImage: "pencil")
-                                    .tag(SortDescriptor(\Counter._updateDate, order: sortOrder))
+                                    .tag(SortDescriptor(\Counter.updateDate, order: sortOrder))
                             }
                             Picker("Order", selection: $sortOrder.animation()) {
                                 Label("Acending", systemImage: "arrow.up")
