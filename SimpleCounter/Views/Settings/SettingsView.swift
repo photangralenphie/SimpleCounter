@@ -58,6 +58,10 @@ struct SettingsView: View {
                     Toggle(isOn: $settingsVariables.useHapticFeedback) {
                         Label("Haptic Feedback", systemImage: "iphone.gen1.radiowaves.left.and.right")
                     }
+                    
+                    Button(action: openSettings) {
+                        Label("Language (opens Settings App)", systemImage: "globe")
+                    }
                 }
                 
                 Section(header: Text("Credits")) {
@@ -71,6 +75,12 @@ struct SettingsView: View {
                     Button("Done") { dismiss() }
                 }
             }
+        }
+    }
+    
+    func openSettings() {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(url)
         }
     }
 }

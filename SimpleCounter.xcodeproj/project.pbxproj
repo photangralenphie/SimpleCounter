@@ -27,6 +27,7 @@
 		DDAA29A62AE087B6004E24E3 /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = DDAA29A52AE087B6004E24E3 /* SwiftySound */; };
 		DDAA29AC2AE08BEB004E24E3 /* button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DDAA29AA2AE08BEB004E24E3 /* button.mp3 */; };
 		DDAA29AD2AE08BEB004E24E3 /* congratulations.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DDAA29AB2AE08BEB004E24E3 /* congratulations.mp3 */; };
+		DDB554142AE465F600185155 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DDB554132AE465F600185155 /* Localizable.xcstrings */; };
 		DDEEDC432AE43E0100E9FD6C /* CounterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEEDC422AE43E0100E9FD6C /* CounterButtonView.swift */; };
 		DDEEDC462AE4457D00E9FD6C /* CounterDigitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEEDC452AE4457D00E9FD6C /* CounterDigitsView.swift */; };
 		DDF08EE42ADFF5C1002E77AF /* SimpleCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08EE32ADFF5C1002E77AF /* SimpleCounterApp.swift */; };
@@ -68,6 +69,7 @@
 		DDAA29A22AE023A7004E24E3 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		DDAA29AA2AE08BEB004E24E3 /* button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button.mp3; sourceTree = "<group>"; };
 		DDAA29AB2AE08BEB004E24E3 /* congratulations.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = congratulations.mp3; sourceTree = "<group>"; };
+		DDB554132AE465F600185155 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		DDEEDC422AE43E0100E9FD6C /* CounterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButtonView.swift; sourceTree = "<group>"; };
 		DDEEDC452AE4457D00E9FD6C /* CounterDigitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterDigitsView.swift; sourceTree = "<group>"; };
 		DDF08EE02ADFF5C1002E77AF /* SimpleCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +199,7 @@
 				DDF08EEE2ADFF5CF002E77AF /* SimpleCounter.entitlements */,
 				DDF08EEF2ADFF5CF002E77AF /* Info.plist */,
 				DDF08EEB2ADFF5CF002E77AF /* Preview Content */,
+				DDB554132AE465F600185155 /* Localizable.xcstrings */,
 			);
 			path = SimpleCounter;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = DDF08ED72ADFF5C1002E77AF;
 			packageReferences = (
@@ -285,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDF08EED2ADFF5CF002E77AF /* Preview Assets.xcassets in Resources */,
+				DDB554142AE465F600185155 /* Localizable.xcstrings in Resources */,
 				DDAA29AC2AE08BEB004E24E3 /* button.mp3 in Resources */,
 				DDAA29AD2AE08BEB004E24E3 /* congratulations.mp3 in Resources */,
 				DDF08EEA2ADFF5CF002E77AF /* Assets.xcassets in Resources */,

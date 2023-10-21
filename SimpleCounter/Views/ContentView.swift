@@ -64,7 +64,7 @@ struct ContentView: View {
                     Button {
                         showAddSheet.toggle()
                     } label: {
-                        Label("Add Item", systemImage: "plus")
+                        Label("Add Counter", systemImage: "plus")
                     }
                 }
             }
