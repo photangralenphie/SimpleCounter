@@ -21,8 +21,7 @@ struct CenterCounterView: View {
     
     var body: some View {
         // Text view at beginning and ending of counterView fixes the seperator not being full lenght
-        Text("")
-            .padding(0)
+        Text("").padding(0)
         
         Image(systemName: "minus")
             .imageScale(.large)
@@ -36,8 +35,7 @@ struct CenterCounterView: View {
         VStack(alignment: .center) {
             Text(counter._counterName)
             HStack(alignment: .firstTextBaseline, spacing: 0) {
-                Text("\(counter._currentValue)")
-                    .font(.largeTitle)
+                Text("\(counter._currentValue)").font(.largeTitle)
                 if (counter._hasGoal) {
                     Text("/\(counter._valueGoal)")
                 }
@@ -66,7 +64,7 @@ struct CenterCounterView: View {
             .onTapGesture { increaseCounter(counter) }
             .onLongPressGesture { showMultiAddAlert.toggle() }
         
-        Text("")
-            .padding(0)
+        // Text view at beginning and ending of counterView fixes the seperator not being full lenght
+        Text("").padding(0)
     }
 }

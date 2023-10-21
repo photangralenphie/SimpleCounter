@@ -100,9 +100,7 @@ struct AddCounterView: View {
                 }
             }
             .alert("Please provide a name for your counter", isPresented: $noNameAlert) {
-                Button("OK", role: .cancel) {
-                    focusedField = .name
-                }
+                Button("OK", role: .cancel) { focusedField = .name }
             }
         }
         .onAppear { focusedField = .name }

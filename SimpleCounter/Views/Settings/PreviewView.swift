@@ -49,8 +49,7 @@ struct PreviewView: View {
                     
                     VStack(alignment: .center) {
                         Text("Name")
-                        Text("\(count)")
-                            .font(.largeTitle)
+                        Text("\(count)").font(.largeTitle)
                     }
                     
                     Spacer()
@@ -90,8 +89,7 @@ struct PreviewView: View {
                         Text("Name")
                         Spacer()
                         HStack(alignment: .firstTextBaseline, spacing: 0) {
-                            Text("\(count)")
-                                .font(.largeTitle)
+                            Text("\(count)").font(.largeTitle)
                         }
                     }
                     .padding(.horizontal)

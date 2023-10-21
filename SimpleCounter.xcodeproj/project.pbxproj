@@ -19,11 +19,9 @@
 		DDAA298A2AE00844004E24E3 /* LeftCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA29872AE00844004E24E3 /* LeftCounterView.swift */; };
 		DDAA298B2AE00844004E24E3 /* RightCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA29882AE00844004E24E3 /* RightCounterView.swift */; };
 		DDAA29982AE013D6004E24E3 /* MITLicenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA29932AE013D6004E24E3 /* MITLicenceView.swift */; };
-		DDAA29992AE013D6004E24E3 /* MyComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA29942AE013D6004E24E3 /* MyComponentData.swift */; };
 		DDAA299A2AE013D6004E24E3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA29952AE013D6004E24E3 /* SettingsView.swift */; };
 		DDAA299B2AE013D6004E24E3 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA29962AE013D6004E24E3 /* Enums.swift */; };
-		DDAA299C2AE013D6004E24E3 /* MyColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA29972AE013D6004E24E3 /* MyColorPicker.swift */; };
-		DDAA299F2AE015D9004E24E3 /* ColorToHexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA299E2AE015D9004E24E3 /* ColorToHexExtension.swift */; };
+		DDAA299C2AE013D6004E24E3 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA29972AE013D6004E24E3 /* ColorPicker.swift */; };
 		DDAA29A12AE02109004E24E3 /* ListStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA29A02AE02109004E24E3 /* ListStyleModifier.swift */; };
 		DDAA29A32AE023A7004E24E3 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA29A22AE023A7004E24E3 /* PreviewView.swift */; };
 		DDAA29A62AE087B6004E24E3 /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = DDAA29A52AE087B6004E24E3 /* SwiftySound */; };
@@ -35,6 +33,19 @@
 		DDF08EEA2ADFF5CF002E77AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDF08EE92ADFF5CF002E77AF /* Assets.xcassets */; };
 		DDF08EED2ADFF5CF002E77AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDF08EEC2ADFF5CF002E77AF /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DDF7CD702AE33FCE00B2FA10 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DD09B75E2AE1A5ED005C9464 /* SystemCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCounterView.swift; sourceTree = "<group>"; };
@@ -48,11 +59,9 @@
 		DDAA29872AE00844004E24E3 /* LeftCounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftCounterView.swift; sourceTree = "<group>"; };
 		DDAA29882AE00844004E24E3 /* RightCounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightCounterView.swift; sourceTree = "<group>"; };
 		DDAA29932AE013D6004E24E3 /* MITLicenceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MITLicenceView.swift; sourceTree = "<group>"; };
-		DDAA29942AE013D6004E24E3 /* MyComponentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyComponentData.swift; sourceTree = "<group>"; };
 		DDAA29952AE013D6004E24E3 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DDAA29962AE013D6004E24E3 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		DDAA29972AE013D6004E24E3 /* MyColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColorPicker.swift; sourceTree = "<group>"; };
-		DDAA299E2AE015D9004E24E3 /* ColorToHexExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorToHexExtension.swift; sourceTree = "<group>"; };
+		DDAA29972AE013D6004E24E3 /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		DDAA29A02AE02109004E24E3 /* ListStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyleModifier.swift; sourceTree = "<group>"; };
 		DDAA29A22AE023A7004E24E3 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		DDAA29AA2AE08BEB004E24E3 /* button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button.mp3; sourceTree = "<group>"; };
@@ -65,6 +74,7 @@
 		DDF08EEC2ADFF5CF002E77AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DDF08EEE2ADFF5CF002E77AF /* SimpleCounter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleCounter.entitlements; sourceTree = "<group>"; };
 		DDF08EEF2ADFF5CF002E77AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDF7CD612AE33FCB00B2FA10 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +93,6 @@
 		DD1DB9FC2AE1421C007BB3BC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DDAA29942AE013D6004E24E3 /* MyComponentData.swift */,
 				DDF08EE72ADFF5C1002E77AF /* Counter.swift */,
 				DD1DB9FA2AE141CB007BB3BC /* StateVariables.swift */,
 				DD1DB9FD2AE14263007BB3BC /* SettingsVariables.swift */,
@@ -120,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				DDAA29932AE013D6004E24E3 /* MITLicenceView.swift */,
-				DDAA29972AE013D6004E24E3 /* MyColorPicker.swift */,
+				DDAA29972AE013D6004E24E3 /* ColorPicker.swift */,
 				DDAA29952AE013D6004E24E3 /* SettingsView.swift */,
 				DDAA29A22AE023A7004E24E3 /* PreviewView.swift */,
 			);
@@ -131,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				DDAA29962AE013D6004E24E3 /* Enums.swift */,
-				DDAA299E2AE015D9004E24E3 /* ColorToHexExtension.swift */,
 				DDAA29A02AE02109004E24E3 /* ListStyleModifier.swift */,
 			);
 			path = Extensions;
@@ -150,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				DDF08EE22ADFF5C1002E77AF /* SimpleCounter */,
+				DDF7CD5E2AE33FCB00B2FA10 /* Frameworks */,
 				DDF08EE12ADFF5C1002E77AF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -186,6 +195,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DDF7CD5E2AE33FCB00B2FA10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDF7CD612AE33FCB00B2FA10 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,6 +213,7 @@
 				DDF08EDC2ADFF5C1002E77AF /* Sources */,
 				DDF08EDD2ADFF5C1002E77AF /* Frameworks */,
 				DDF08EDE2ADFF5C1002E77AF /* Resources */,
+				DDF7CD702AE33FCE00B2FA10 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -270,11 +288,9 @@
 				DDF08EE62ADFF5C1002E77AF /* ContentView.swift in Sources */,
 				DDAA298B2AE00844004E24E3 /* RightCounterView.swift in Sources */,
 				DDAA29A12AE02109004E24E3 /* ListStyleModifier.swift in Sources */,
-				DDAA299F2AE015D9004E24E3 /* ColorToHexExtension.swift in Sources */,
 				DDF08EE82ADFF5C1002E77AF /* Counter.swift in Sources */,
-				DDAA29992AE013D6004E24E3 /* MyComponentData.swift in Sources */,
 				DDAA298A2AE00844004E24E3 /* LeftCounterView.swift in Sources */,
-				DDAA299C2AE013D6004E24E3 /* MyColorPicker.swift in Sources */,
+				DDAA299C2AE013D6004E24E3 /* ColorPicker.swift in Sources */,
 				DDAA29A32AE023A7004E24E3 /* PreviewView.swift in Sources */,
 				DD09B75F2AE1A5ED005C9464 /* SystemCounterView.swift in Sources */,
 				DD1DB9FE2AE14263007BB3BC /* SettingsVariables.swift in Sources */,

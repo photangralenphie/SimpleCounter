@@ -5,8 +5,8 @@
 //  Created by Jonas Helmer on 19.10.23.
 //
 
-import Foundation
+import SwiftUI
 
-class StateVariables: ObservableObject {
-    @Published public var showCongratulationsView: Bool = false
+@Observable class StateVariables {
+    var showCongratulationsView: Bool = false
 }

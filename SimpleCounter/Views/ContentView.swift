@@ -18,7 +18,7 @@ struct ContentView: View {
     @State private var sortDescriptor = SortDescriptor(\Counter._counterName, order: .forward)
     @State private var sortOrder: SortOrder = .forward
     
-    @EnvironmentObject private var stateVariables: StateVariables
+    @Environment(StateVariables.self) private var stateVariables
     @EnvironmentObject private var settingsVariables: SettingsVariables
     
     var body: some View {
@@ -69,12 +69,8 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Counter")
-            .popover(isPresented: $showAddSheet) {
-                AddCounterView()
-            }
-            .sheet(isPresented: $showSettings) {
-                SettingsView()
-            }
+            .popover(isPresented: $showAddSheet) { AddCounterView() }
+            .sheet(isPresented: $showSettings) { SettingsView() }
             .overlay(content: {
                 if counters.isEmpty {
                     NoCounterView(showAddSheet: $showAddSheet)
@@ -84,9 +80,4 @@ struct ContentView: View {
             })
         }
     }
-}
-
-#Preview {
-    ContentView()
-        .modelContainer(for: Counter.self, inMemory: true)
 }

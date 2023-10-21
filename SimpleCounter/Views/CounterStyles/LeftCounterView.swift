@@ -22,8 +22,7 @@ struct LeftCounterView: View {
     var body: some View {
         
         // Text view at beginning of counterView fixes the seperator not being full lenght
-        Text("")
-            .padding(0)
+        Text("").padding(0)
         
         Image(systemName: "minus")
             .imageScale(.large)
@@ -32,8 +31,7 @@ struct LeftCounterView: View {
             .onLongPressGesture { showMultiAddAlert.toggle() }
 
         HStack(alignment: .firstTextBaseline, spacing: 0) {
-            Text("\(counter._currentValue)")
-                .font(.largeTitle)
+            Text("\(counter._currentValue)").font(.largeTitle)
             if (counter._hasGoal) {
                 Text("/\(counter._valueGoal)")
             }

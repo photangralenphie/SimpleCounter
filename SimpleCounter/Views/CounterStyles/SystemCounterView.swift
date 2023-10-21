@@ -20,8 +20,7 @@ struct SystemCounterView: View {
                 Text(counter._counterName)
                 Spacer()
                 HStack(alignment: .firstTextBaseline, spacing: 0) {
-                    Text("\(counter._currentValue)")
-                        .font(.largeTitle)
+                    Text("\(counter._currentValue)").font(.largeTitle)
                     if (counter._hasGoal) {
                         Text("/\(counter._valueGoal)")
                     }

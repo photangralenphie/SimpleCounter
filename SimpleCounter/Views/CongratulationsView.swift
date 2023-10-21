@@ -11,13 +11,12 @@ import ConfettiSwiftUI
 
 struct CongratulationsView: View {
     
-    @EnvironmentObject var stateVariables: StateVariables
+    @Environment(StateVariables.self) var stateVariables
     @EnvironmentObject private var settingsVariables: SettingsVariables
-
-    let hapticFeedback = UIImpactFeedbackGenerator(style: .heavy)
     
-    @State private var symbolAnimation: Bool = false
-    @State private var confettiCannon: Int = 0
+    @State private var symbolAnimationTrigger: Bool = false
+    @State private var confettiCannonTrigger: Int = 0
+    @State private var hapticFeedbackTrigger: Bool = false
     
     var body: some View {
         VStack {
@@ -25,31 +24,40 @@ struct CongratulationsView: View {
                 .padding(.top)
             Text("You reached your goal.")
                 .padding(.bottom)
-            Image(systemName: "checkmark")
+            Image(systemName: "checkmark.seal")
                 .resizable()
-                .frame(width: 200, height: 180)
+                .frame(width: 200, height: 200)
                 .scaledToFit()
-                .foregroundColor(settingsVariables.accentColor==settingsVariables.componentsData.availibleColors.count ? .primary : Color(hex: settingsVariables.componentsData.availibleColors[settingsVariables.accentColor])) // SwiftUI does not respect tint so this is a workaround
-                .symbolEffect(.bounce, value: symbolAnimation)
+                .foregroundColor(settingsVariables.getAccentColor())
+                .symbolEffect(.bounce, value: symbolAnimationTrigger)
                 .padding([.leading, .bottom, .trailing], 50)
         }
         .background(.ultraThinMaterial)
         .cornerRadius(25)
         .onAppear(perform: congratulationsFeedback)
-        .confettiCannon(counter: $confettiCannon, num: 25, openingAngle: Angle(degrees: 40), closingAngle: Angle(degrees: 140), repetitions: 8, repetitionInterval: 0.1)
+        .sensoryFeedback(.error, trigger: hapticFeedbackTrigger)
+        .confettiCannon(counter: $confettiCannonTrigger,
+                        num: 25,
+                        openingAngle: Angle(degrees: 40),
+                        closingAngle: Angle(degrees: 140),
+                        repetitions: 8,
+                        repetitionInterval: 0.1)
     }
     
     func congratulationsFeedback() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            symbolAnimation.toggle()
-        }
-        confettiCannon += 1
+        confettiCannonTrigger += 1
+        
         if settingsVariables.useSoundFeedback {
             Sound.play(file: "congratulations.mp3")
         }
-        if settingsVariables.useHapticFeedback {
-            hapticFeedback.impactOccurred()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            symbolAnimationTrigger.toggle()
+            if settingsVariables.useHapticFeedback {
+                hapticFeedbackTrigger.toggle()
+            }
         }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             withAnimation {
                 stateVariables.showCongratulationsView = false

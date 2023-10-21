@@ -14,12 +14,12 @@ struct CounterListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var counters: [Counter]
     
-    @EnvironmentObject private var stateVariables: StateVariables
+    @Environment(StateVariables.self) private var stateVariables
     @EnvironmentObject private var settingsVariables: SettingsVariables
     
     @State private var showMultiAddAlert: Bool = false
     
-    let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+    @State var hapticFeedbackTrigger: Bool = false
     
     init(sort: SortDescriptor<Counter>) {
         _counters = Query(sort: [sort])
@@ -59,6 +59,7 @@ struct CounterListView: View {
                         }
                     }
                 }
+                .sensoryFeedback(.impact, trigger: hapticFeedbackTrigger)
             }
             .onDelete { offsets in
                 for index in offsets {
@@ -97,7 +98,7 @@ struct CounterListView: View {
     
     func fireFeedback() {
         if settingsVariables.useHapticFeedback {
-            hapticFeedback.impactOccurred()
+            hapticFeedbackTrigger.toggle()
         }
         if settingsVariables.useSoundFeedback {
             Sound.play(file: "button.mp3")
