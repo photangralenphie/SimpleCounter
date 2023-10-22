@@ -141,6 +141,16 @@
         }
       }
     },
+    "Close" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schließen"
+          }
+        }
+      }
+    },
     "Compact" : {
       "localizations" : {
         "de" : {
@@ -247,6 +257,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fertig"
+          }
+        }
+      }
+    },
+    "Enlarge" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vergrößern"
           }
         }
       }
@@ -387,6 +407,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Noch keine Zähler"
+          }
+        }
+      }
+    },
+    "of %lld" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "von %lld"
           }
         }
       }

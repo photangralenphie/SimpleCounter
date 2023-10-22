@@ -84,7 +84,7 @@ struct AddCounterView: View {
                             Text("Add")
                         }
                     }
-                    .buttonStyle(.borderedProminent)
+                    .buttonStyle(.bordered)
                 }
                 
                 ToolbarItemGroup(placement: .keyboard) {

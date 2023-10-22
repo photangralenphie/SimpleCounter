@@ -18,6 +18,7 @@ struct CounterListView: View {
     @EnvironmentObject private var settingsVariables: SettingsVariables
     
     @State private var hapticFeedbackTrigger: Bool = false
+    @State private var showBigCounter: Bool = false
     
     init(sort: SortDescriptor<Counter>) {
         _counters = Query(sort: [sort])
@@ -47,7 +48,18 @@ struct CounterListView: View {
                                               increaseCounter: self.increaseCounter)
                         }
                     }
+                    .swipeActions(edge: .leading) {
+                        Button {
+                            showBigCounter.toggle()
+                        } label: {
+                            Label("Enlarge", systemImage: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left")
+                        }
+                    }
                 }
+
+                .fullScreenCover(isPresented: $showBigCounter) { BigCounterView(counter: counter,
+                                                                               decreaseCounter: self.decreaseCounter,
+                                                                               increaseCounter: self.increaseCounter) }
                 .sensoryFeedback(.impact, trigger: hapticFeedbackTrigger)
             }
             .onDelete { offsets in
